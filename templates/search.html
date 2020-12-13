@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>spd</title>
+    <link href="{{ url_for('static', filename='styles.css') }}" type="text/css" rel="stylesheet">
+    <script type=text/javascript src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+<body>
+    <header>
+        <div class="links">
+            <a href="/logout">התנתק</a>
+        </div>
+        <h1>SPD - Social Portuguese Dictionary</h1>
+    </header>
+    <p>היי, {{name}}!</p>
+    <p>ברוכים הבאים למילון העברי-פורטוגזי החברתי הראשון בישראל. תוכלו להיעזר במילון על מנת ללמוד פורטוגזית.</p>
+    <p>ליד כל תוצאה יש לחצן לייק. התרגום עזר לכם? סמנו בו לייק, זה יעזור לבאים אחריכם לדעת להבחין בין תרגומים רווחים יותר או פחות.</p>
+    <p>יודעים משהו שאנחנו לא? מוזמנים לעזור לנו ולהוסיף מילים למאגר!</p>
+    <form method="GET" action="/search">
+        <label for="word">חפש כאן מילה או ביטוי</label>
+        <input name="word" id="word" type="search">
+        <button>search</button>
+    </form>
+    {% if word %}
+        <h2 id="word-title">{{word}}</h2>
+        {% if translations %}
+            <h3>תוצאות:</h3>
+            <div class="results">
+            {% for translation in translations %}
+                <div class="result">
+                <p class="translation" id="trans{{translation[4]}}">{{translation[0]}}</p>
+                {% if translation[2] %}
+                    <p>{{translation[2]}}</p>
+                {% endif %}
+                <p>חלק דיבר: {{translation[1]}}</p>
+                {% if translation[3] %}
+                    <p>הועלה על ידי: {{translation[3]}}</p>
+                {% endif %}
+                <div class="like-button">
+                    <button id="like-button{{translation[4]}}" onclick="setLike(this, '{{translation[4]}}')">{{translation[5]}}</button>
+                    <p>{{translation[6]}}</p>
+                </div>
+                </div>
+            {% endfor %}
+            </div>
+        {% else %}
+            <p>לא נמצאו תוצאות</p>
+        {% endif %}
+    {% endif %}
+    <footer>
+        <a href="/upload">הוספת מילה חדשה</a>
+        {% if role == 2 %}
+            <a href="/check">בדוק מילים שזקוקות לאישור</a>
+        {% endif %}
+    </footer>
+</body>
+</html>

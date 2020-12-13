@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>spd</title>
+    <link href="{{ url_for('static', filename='styles.css') }}" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="links">
+            <a href="/logout">התנתק</a>
+            <a href="/search">בחזרה לחיפוש</a>
+        </div>
+        <h1>SPD - Social Portuguese Dictionary</h1>
+    </header>
+    <main>
+        <form action="/upload" method="POST" class="upload">
+            <label for="word">מילה או ביטוי בפורטוגזית:</label>
+            <input type="text" name="word" id="word">
+            <label for="translation">תרגום לעברית:</label>
+            <input type="text" name="translation" id="translation">
+            <label for="parts_of_speech">חלק דיבר:</label>
+            <select name="parts_of_speech" id="parts_of_speech">
+                {% for part in parts %}
+                    <option value="{{part}}">{{part}}</option>
+                {% endfor %}
+            </select>
+            <label for="explanation">כאן אפשר להוסיף הסבר, דוגמה או כל דבר שלדעתך יעזור להבנת התרגום:</label>
+                <textarea name="explanation" id="explanation"></textarea>
+            <button type="submit">שלח</button>
+        </form>
+    </main>
+    <footer>
+        <p>תודה רבה על התמיכה באתר! המילה תיבדק על ידי מנהל בימים הקרובים.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,73 @@
+html {
+    background-color: rgba(256,200,0,0.2);
+    font-size: 22px;
+    padding-left: 3em;
+    padding-right: 3em;
+    text-align: right;
+    direction: rtl;
+}
+
+.details figure {
+    width: 15em;
+    float: left;
+    margin: 1em;
+    text-align: center;
+}
+
+form.register,
+form.upload {
+    display: grid;
+    grid-row-gap: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 100%;
+    width: 30%;
+}
+
+.translation,
+.word {
+    font-size: 1.5em;
+}
+
+header,
+main,
+footer {
+    padding: 2em;
+    text-align: center;
+    align-items: center;
+}
+
+.results {
+    align-items: center;
+    text-align: center;
+}
+
+.result {
+    border: 2px solid rgb(20, 200, 100);
+    margin: 1em;
+    padding-bottom: 1em;
+}
+
+header a {
+    float: right;
+    margin-right: 2em;
+}
+
+
+a {
+    padding: 0.5em;
+    text-decoration: none;
+    color: black;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 2px solid rgb(20, 200, 100);
+}
+
+a:active {
+    color: rgb(20, 200, 100);
+}
+
+h1, h2 {
+    font-size: 3em;
+    text-align: center;
+}

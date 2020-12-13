@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>spd</title>
+    <link href="{{ url_for('static', filename='styles.css') }}" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>SPD - Social Portuguese Dictionary</h1>
+    </header>
+    <main>
+        <form action="/login" method="POST" dir="rtl">
+            <label for="mail" dir="rtl">דוא"ל</label>
+            <input type="text" name="mail" id="mail">
+            <label for="password" dir="rtl">סיסמה</label>
+            <input type="password" name="password" id="password" dir="rtl">
+            <button type="submit" dir="rtl">להתחבר</button>
+        </form>
+    </main>
+    <footer><a href="/register">להרשמה</a></footer>
+</body>
+</html>

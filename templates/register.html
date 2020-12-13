@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>spd</title>
+    <link href="{{ url_for('static', filename='styles.css') }}" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>SPD - Social Portuguese Dictionary</h1>
+    </header>
+    <main class="register">
+        <div>
+            <P>ברוכים הבאים למילון הפורטוגזי-עברי החברתי הראשון בישראל.</p>
+            <p>כאן תוכלו להשתמש בידע שנמצא אצלנו במאגר, ואף לתרום לקהילה מהידע שלכם ולעזור לנו להרחיב את המילון.</P>
+            <P>כדי להשתמש במערכת, כל מה שצריך זה להירשם כאן. זה חינם :)</P>
+        </div>
+        <form action="/register" method="POST" class="register">
+            <label for="name">שם</label>
+            <input type="text" name="name" id="name">
+            <label for="mail">דוא"ל</label>
+            <input type="text" name="mail" id="mail">
+            <label for="password">סיסמה</label>
+            <input type="password" name="password" id="password">
+            <label for="password1">הזן סיסמה שנית</label>
+            <input type="password" name="password1" id="password1">
+            <button type="submit">להירשם עכשיו!</button>
+        </form>
+    </main>
+    <footer>
+    <p>כבר יש לכם משתמש במערכת? מעולה, אפשר להתחבר מכאן:</p>
+    <a href="/login">להתחבר :)</a>
+    </footer>
+</body>
+</html>
