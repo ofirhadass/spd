@@ -1,6 +1,0 @@
-HOST = "ec2-54-75-248-49.eu-west-1.compute.amazonaws.com"
-DATABASE = "d43qk7e85ji34l"
-USER = "sgurdaudmseajb"
-PORT = "5432"
-PASSWORD = "1d842a775dfaf7a1c2542e0f1860c8113ac3cad273edfafa75504abacc545604"
-URI = "postgres://sgurdaudmseajb:1d842a775dfaf7a1c2542e0f1860c8113ac3cad273edfafa75504abacc545604@ec2-54-75-248-49.eu-west-1.compute.amazonaws.com:5432/d43qk7e85ji34l"
